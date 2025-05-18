@@ -159,15 +159,19 @@ class IntegrantReverseNavigationProvider : DirectNavigationProvider {
         if (element.language != ClojureLanguage.getInstance()) {
             return null
         }
-        if (isInInitKeyFunction(element)) {
-            val keyword = findKeywordInDefmethod(element)
-            if (keyword == null) {
-                return null
+        
+        // Only navigate if we're directly clicking on a keyword
+        if (element is ClKeyword || element.parent is ClKeyword) {
+            val keyword = if (element is ClKeyword) element else element.parent as ClKeyword
+            
+            // Check if this keyword is inside an init-key defmethod
+            if (isInInitKeyFunction(keyword)) {
+                val references = findConfigReferences(keyword)
+                val firstRef = references.firstOrNull()
+                return firstRef
             }
-            val references = findConfigReferences(keyword)
-            val firstRef = references.firstOrNull()
-            return firstRef
         }
+        
         return null
     }
     
