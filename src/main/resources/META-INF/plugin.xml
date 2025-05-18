@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>org.bigsy.integrantnavigator</id>
+    <name>Integrant Navigator</name>
+    <vendor>Bill Hedworth</vendor> <!-- You can change this to your name/company -->
+
+    <description><![CDATA[
+    Provides bi-directional navigation for Integrant components:
+    - From namespaced keywords in EDN (e.g., config.edn) files to their corresponding Integrant component `init-key` definitions in Clojure code.
+    - From `integrant.core/init-key` definitions in Clojure code back to their references in config files.
+    <br/>]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="241" until-build="243.*"/>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html for description -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.cursiveclojure.cursive</depends> <!-- Dependency on Cursive -->
+    <depends>org.jetbrains.kotlin</depends> <!-- If using Kotlin standard library -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantNavigationProvider"/>
+        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantReverseNavigationProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add plugin actions here if needed -->
+    </actions>
+</idea-plugin>
