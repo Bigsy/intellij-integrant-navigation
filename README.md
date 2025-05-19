@@ -1,5 +1,7 @@
 # Integrant Navigator
 
+https://plugins.jetbrains.com/plugin/27417-integrant-navigator
+
 An IntelliJ IDEA plugin that provides navigation from namespaced keywords in EDN files (like `config.edn`) to their corresponding Integrant component implementations in Clojure code.
 
 ## Features
@@ -27,7 +29,7 @@ An IntelliJ IDEA plugin that provides navigation from namespaced keywords in EDN
 3. You'll be navigated to the corresponding configuration in your EDN files.
 4. The plugin intelligently prioritizes fully qualified keywords and direct configuration entries over references.
 
-## Building from Source
+## Building from Source locally
 
 ```bash
 ./gradlew build
