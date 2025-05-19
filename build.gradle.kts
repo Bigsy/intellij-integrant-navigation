@@ -4,8 +4,8 @@ plugins {
     id("org.jetbrains.intellij") version "1.17.4"
 }
 
-group = "org.bigsy" // Your chosen group
-version = "0.1.0-SNAPSHOT" // Initial version
+group = "org.bigsy"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -13,7 +13,7 @@ repositories {
 
 // Configure Gradle IntelliJ Plugin
 intellij {
-    version.set("2024.1.7") // Target IntelliJ IDEA version
+    version.set("2024.1") // Target IntelliJ IDEA version (more general)
     type.set("IC") // Target IDE Platform (Community Edition)
 
     downloadSources.set(true) // Download sources for IntelliJ Platform and plugins
@@ -22,7 +22,7 @@ intellij {
     plugins.set(listOf(
         "org.jetbrains.kotlin", // Kotlin plugin itself
         "com.intellij.java", // Java support, often needed
-        "com.cursiveclojure.cursive:2025.1.1-241" // Cursive plugin dependency
+        "com.cursiveclojure.cursive:2025.1.1-241" // Cursive plugin with specific build number
     ))
 
     // Optional: Use a custom sandbox directory
@@ -43,7 +43,7 @@ tasks {
         // These will be derived from the intellij.version if not set explicitly
         // Or, you can set them in gradle.properties and reference them here
         sinceBuild.set("241") // Corresponds to 2024.1
-        untilBuild.set("243.*") // Corresponds to 2024.3.x and later
+        untilBuild.set("249.*") // Corresponds to 2024.3.x and later
     }
 
     // Skip the buildSearchableOptions task which is causing issues
