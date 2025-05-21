@@ -22,6 +22,10 @@
         <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantReverseNavigationProvider"/>
     </extensions>
 
+    <extensions defaultExtensionNs="org.jetbrains.kotlin">
+        <supportsKotlinPluginMode implementation="org.bigsy.integrantnavigator.KotlinPluginModeSupport"/>
+    </extensions>
+
     <actions>
         <!-- Add plugin actions here if needed -->
     </actions>
