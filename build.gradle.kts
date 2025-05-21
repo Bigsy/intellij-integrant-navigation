@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.bigsy"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
@@ -43,7 +43,7 @@ tasks {
         // These will be derived from the intellij.version if not set explicitly
         // Or, you can set them in gradle.properties and reference them here
         sinceBuild.set("241") // Corresponds to 2024.1
-        untilBuild.set("249.*") // Corresponds to 2024.3.x and later
+        untilBuild.set("") // No upper limit for maximum compatibility
     }
 
     // Skip the buildSearchableOptions task which is causing issues
