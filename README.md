@@ -4,6 +4,10 @@ https://plugins.jetbrains.com/plugin/27417-integrant-navigator
 
 An IntelliJ IDEA plugin that provides navigation from namespaced keywords in EDN files (like `config.edn`) to their corresponding Integrant component implementations in Clojure code.
 
+## Demo
+
+[![Integrant Navigator Demo](https://img.youtube.com/vi/XzrysD5HkWQ/0.jpg)](https://www.youtube.com/watch?v=XzrysD5HkWQ)
+
 ## Features
 
 - **Keyword Navigation**: Cmd+click (or Ctrl+click on Windows/Linux) on a namespaced keyword in an EDN file to navigate to its corresponding Integrant component implementation.
