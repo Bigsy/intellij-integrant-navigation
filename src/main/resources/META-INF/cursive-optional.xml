@@ -1,0 +1,7 @@
+<idea-plugin>
+    <!-- Extensions that depend on Cursive -->
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantNavigationProvider"/>
+        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantReverseNavigationProvider"/>
+    </extensions>
+</idea-plugin>

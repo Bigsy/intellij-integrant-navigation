@@ -14,13 +14,10 @@
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html for description -->
     <depends>com.intellij.modules.platform</depends>
-    <depends>com.cursiveclojure.cursive</depends> <!-- Dependency on Cursive -->
+    <depends optional="true" config-file="cursive-optional.xml">com.cursiveclojure.cursive</depends> <!-- Optional dependency on Cursive -->
     <depends>org.jetbrains.kotlin</depends> <!-- If using Kotlin standard library -->
 
-    <extensions defaultExtensionNs="com.intellij">
-        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantNavigationProvider"/>
-        <lang.directNavigationProvider implementation="org.bigsy.integrantnavigator.IntegrantReverseNavigationProvider"/>
-    </extensions>
+    <!-- Extensions moved to cursive-optional.xml since they depend on Cursive -->
 
     <extensions defaultExtensionNs="org.jetbrains.kotlin">
         <supportsKotlinPluginMode implementation="org.bigsy.integrantnavigator.KotlinPluginModeSupport"/>

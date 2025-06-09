@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.bigsy"
-version = "0.0.2"
+version = "0.0.3"
 
 repositories {
     mavenCentral()
@@ -49,6 +49,11 @@ tasks {
     // Skip the buildSearchableOptions task which is causing issues
     buildSearchableOptions {
         enabled = false
+    }
+
+    // Plugin verification task
+    runPluginVerifier {
+        ideVersions.set(listOf("2024.1", "2024.2", "2024.3"))
     }
 
     // Optional: Configuration for signing and publishing the plugin
