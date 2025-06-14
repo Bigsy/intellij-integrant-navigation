@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.bigsy"
-version = "0.0.3"
+version = "0.0.4"
 
 repositories {
     mavenCentral()
@@ -22,7 +22,7 @@ intellij {
     plugins.set(listOf(
         "org.jetbrains.kotlin", // Kotlin plugin itself
         "com.intellij.java", // Java support, often needed
-        "com.cursiveclojure.cursive:2025.1.1-241" // Cursive plugin with specific build number
+        "com.cursiveclojure.cursive:1.13.3-2024.1" // Cursive plugin - using version with broader compatibility
     ))
 
     // Optional: Use a custom sandbox directory
@@ -43,7 +43,7 @@ tasks {
         // These will be derived from the intellij.version if not set explicitly
         // Or, you can set them in gradle.properties and reference them here
         sinceBuild.set("241") // Corresponds to 2024.1
-        untilBuild.set("") // No upper limit for maximum compatibility
+        untilBuild.set("") // Open-ended for maximum forward compatibility
     }
 
     // Skip the buildSearchableOptions task which is causing issues
@@ -53,7 +53,7 @@ tasks {
 
     // Plugin verification task
     runPluginVerifier {
-        ideVersions.set(listOf("2024.1", "2024.2", "2024.3"))
+        ideVersions.set(listOf("2024.1", "2024.2", "2024.3", "2025.1", "2025.2"))
     }
 
     // Optional: Configuration for signing and publishing the plugin

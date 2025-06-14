@@ -10,18 +10,15 @@
     <br/>]]></description>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
-    <idea-version since-build="241" until-build="243.*"/>
+    <idea-version since-build="241"/>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html for description -->
     <depends>com.intellij.modules.platform</depends>
     <depends optional="true" config-file="cursive-optional.xml">com.cursiveclojure.cursive</depends> <!-- Optional dependency on Cursive -->
-    <depends>org.jetbrains.kotlin</depends> <!-- If using Kotlin standard library -->
 
     <!-- Extensions moved to cursive-optional.xml since they depend on Cursive -->
 
-    <extensions defaultExtensionNs="org.jetbrains.kotlin">
-        <supportsKotlinPluginMode implementation="org.bigsy.integrantnavigator.KotlinPluginModeSupport"/>
-    </extensions>
+    <!-- Kotlin plugin mode support removed for broader compatibility -->
 
     <actions>
         <!-- Add plugin actions here if needed -->
